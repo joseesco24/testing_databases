@@ -8,9 +8,10 @@
 	},
 	"readme": "readme.md",
 	"scripts": {
-		"docker-build-mysql-image": "docker compose -f src/tableau_bridge/compose/image.build.yaml build",
-		"docker-full-stop": "docker compose -f src/tableau_bridge/compose/standalone.yaml down",
-		"docker-full-start": "docker compose -f src/tableau_bridge/compose/standalone.yaml up",
+		"docker-build-postgres-image": "docker compose -f src/postgres/compose/image.build.yaml build",
+		"docker-build-mysql-image": "docker compose -f src/mysql/compose/image.build.yaml build",
+		"docker-full-stop": "docker compose -f src/full/compose/full.mount.yaml down",
+		"docker-full-start": "docker compose -f src/full/compose/full.mount.yaml up",
 		"commitmsg": "bash hooks/commit-msg.sh",
 		"precommit": "bash hooks/pre-commit.sh",
 		"postinstall": "npx husky install"

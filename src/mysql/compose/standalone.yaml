@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  mysql_test_db_001:
+    container_name: mysql_test_db_001
+    image: ghcr.io/joseesco24/mysql_test_db_001:latest
+    networks:
+      - testing_databases_network
+    ports:
+      - target: 3306
+        published: 3308
+        protocol: tcp
+    volumes:
+      - type: volume
+        source: mysql_test_db_001_disc
+        target: /var/lib/mysql
+
+networks:
+  testing_databases_network:
+    name: testing_databases_network
+    external: false
+    driver: bridge
+
+volumes:
+  mysql_test_db_001_disc:
