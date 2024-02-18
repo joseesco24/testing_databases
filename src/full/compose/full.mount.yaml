@@ -15,9 +15,9 @@ services:
         source: mysql_test_db_001_disc
         target: /var/lib/mysql
 
-  postgres_test_db_001:
-    container_name: postgres_test_db_001
-    image: ghcr.io/joseesco24/postgres_test_db_001:latest
+  postgresql_test_db_001:
+    container_name: postgresql_test_db_001
+    image: ghcr.io/joseesco24/postgresql_test_db_001:latest
     networks:
       - testing_databases_network
     ports:
@@ -26,7 +26,7 @@ services:
         protocol: tcp
     volumes:
       - type: volume
-        source: postgres_test_db_001_disc
+        source: postgresql_test_db_001_disc
         target: /var/lib/postgresql/data
 
 networks:
@@ -36,5 +36,5 @@ networks:
     driver: bridge
 
 volumes:
-  postgres_test_db_001_disc:
+  postgresql_test_db_001_disc:
   mysql_test_db_001_disc:

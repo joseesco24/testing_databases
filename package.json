@@ -8,6 +8,7 @@
 	},
 	"readme": "readme.md",
 	"scripts": {
+		"docker-build-full-images": "docker compose -f src/full/compose/full.image.build.yaml build",
 		"docker-build-postgres-image": "docker compose -f src/postgres/compose/image.build.yaml build",
 		"docker-build-mysql-image": "docker compose -f src/mysql/compose/image.build.yaml build",
 		"docker-full-stop": "docker compose -f src/full/compose/full.mount.yaml down",

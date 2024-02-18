@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  mysql_test_db_001:
+    image: ghcr.io/joseesco24/mysql_test_db_001:latest
+    build:
+      dockerfile: Dockerfile
+      context: ../../mysql/.
+
+  postgresql_test_db_001:
+    image: ghcr.io/joseesco24/postgresql_test_db_001:latest
+    build:
+      dockerfile: Dockerfile
+      context: ../../postgres/.
