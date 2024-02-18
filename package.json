@@ -9,11 +9,13 @@
 	"readme": "readme.md",
 	"scripts": {
 		"docker-push-images": "docker push ghcr.io/joseesco24/mysql_test_db_001 && docker push ghcr.io/joseesco24/postgresql_test_db_001",
+		"docker-build-postgresql-image": "docker compose -f src/postgres/compose/image.build.yaml build",
 		"docker-build-full-images": "docker compose -f src/full/compose/full.image.build.yaml build",
-		"docker-build-postgres-image": "docker compose -f src/postgres/compose/image.build.yaml build",
 		"docker-build-mysql-image": "docker compose -f src/mysql/compose/image.build.yaml build",
 		"docker-full-stop": "docker compose -f src/full/compose/full.mount.yaml down",
 		"docker-full-start": "docker compose -f src/full/compose/full.mount.yaml up",
+		"docker-postgresql-it": "docker exec -it postgresql_test_db_001 sh",
+		"docker-mysql-it": "docker exec -it mysql_test_db_001 sh",
 		"commitmsg": "bash hooks/commit-msg.sh",
 		"precommit": "bash hooks/pre-commit.sh",
 		"postinstall": "npx husky install"
