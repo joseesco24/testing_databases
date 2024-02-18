@@ -3,7 +3,7 @@
 # ---------------------------------------------------------------------------------------------------------------------
 
 # ** info: declaration of the image base version
-FROM mysql:8.3.0-oraclelinux8
+FROM mysql:8.3.0
 
 # ** info: declaration of the image env variables
 ENV MYSQL_DATABASE=mysql_test_db_001
